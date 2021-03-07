@@ -63,7 +63,7 @@ export default function renderCart() {
       "You have not added any products to the cart yet"
     );
   }
-
+  updateCartIcon();
   updateQty();
   deleteProductRow();
   addShippingInfo();

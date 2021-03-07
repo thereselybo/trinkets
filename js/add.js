@@ -1,6 +1,6 @@
 import createMenu from "./components/common/createMenu.js";
 import displayMessage from "./components/common/displayMessage.js";
-import { baseUrl } from "./settings/variables.js";
+import { baseUrl, hostedUrl } from "./settings/variables.js";
 import { checkIfAdmin, getFromStorage, tokenKey } from "./utils/storage.js";
 import validateElement, {
   checkUrlProtocol,
@@ -15,7 +15,7 @@ toggleFeaturedSwitch();
 (function () {
   const title = "Add product - ";
   const desc = "Add new product to inventory";
-  const img = "https://lybo.dev/semproj2/img/logo-horizontal.svg";
+  const img = `${hostedUrl}/img/logo-horizontal.svg`;
   const url = location.href;
   updateHead(title, desc, img, url);
 })();

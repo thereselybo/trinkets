@@ -1,4 +1,4 @@
-import { baseUrl } from "./settings/variables.js";
+import { baseUrl, hostedUrl } from "./settings/variables.js";
 import renderProducts from "./components/products/renderProducts.js";
 import displayMessage from "./components/common/displayMessage.js";
 import handleFaves from "./components/favorites/handleFaves.js";
@@ -11,7 +11,7 @@ import updateHead from "./components/common/updateHead.js";
 (function () {
   const title = `${document.title} - `;
   const desc = "Browse our many lovely products";
-  const img = "https://lybo.dev/semproj2/img/logo-horizontal.svg";
+  const img = `${hostedUrl}/img/logo-horizontal.svg`;
   const url = location.href;
   updateHead(title, desc, img, url);
 })();

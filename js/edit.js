@@ -1,6 +1,10 @@
 import createMenu from "./components/common/createMenu.js";
 import displayMessage from "./components/common/displayMessage.js";
-import { baseUrl, productImgPlaceholder } from "./settings/variables.js";
+import {
+  baseUrl,
+  productImgPlaceholder,
+  hostedUrl,
+} from "./settings/variables.js";
 import { checkIfAdmin } from "./utils/storage.js";
 import toggleFeaturedSwitch from "./components/misc/toggleFeaturedSwitch.js";
 import validateElement, { validateLink } from "./utils/validation.js";
@@ -13,7 +17,7 @@ createMenu();
 (function () {
   const title = "Edit product - ";
   const desc = "Edit an already existing product";
-  const img = "https://lybo.dev/semproj2/img/logo-horizontal.svg";
+  const img = `${hostedUrl}/img/logo-horizontal.svg`;
   const url = location.href;
   updateHead(title, desc, img, url);
 })();

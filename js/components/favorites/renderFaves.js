@@ -5,13 +5,14 @@ import displayMessage from "../common/displayMessage.js";
 import handleFaves from "./handleFaves.js";
 import updateHead from "../common/updateHead.js";
 import addToCart from "../cart/addToCart.js";
+import { hostedUrl } from "../../settings/variables.js";
 
 createMenu();
 
 (function () {
   const title = "Favorites";
   const desc = "Which product is your favorite?";
-  const img = "https://lybo.dev/semproj2/img/logo-horizontal.svg";
+  const img = `${hostedUrl}/img/logo-horizontal.svg`;
   const url = location.href;
   updateHead(title, desc, img, url);
 })();

@@ -1,13 +1,13 @@
 import createMenu from "./components/common/createMenu.js";
 import displayMessage from "./components/common/displayMessage.js";
 import renderFeaturedProducts from "./components/products/renderFeaturedProducts.js";
-import { baseUrl } from "./settings/variables.js";
+import { baseUrl, hostedUrl } from "./settings/variables.js";
 import updateHead from "./components/common/updateHead.js";
 
 (function () {
   const title = "";
   const desc = "An home decor online store";
-  const img = "https://lybo.dev/semproj2/img/logo-horizontal.svg";
+  const img = `${hostedUrl}/img/logo-horizontal.svg`;
   const url = location.href;
   updateHead(title, desc, img, url);
 })();
