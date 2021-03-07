@@ -28,18 +28,15 @@ export default function addToCart() {
 }
 
 export function updateCartIcon() {
-  console.log("start of updateCartIcon");
+  console.log("updateCartIcon");
   const currentCart = getFromStorage(cartKey);
   let cartQty = 0;
-  console.log(currentCart);
-  console.log(cartQty);
 
   currentCart.forEach((product) => {
     const productQty = product.qty;
     console.log(product.qty);
     cartQty += productQty;
   });
-  console.log("hello");
 
   console.log("items in cart:", cartQty);
 

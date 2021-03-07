@@ -35,7 +35,7 @@ export default function updateQty() {
   });
 
   addBtns.forEach((button) => {
-    button.onclick = (e) => {
+    button.onclick = () => {
       console.log("adding another item");
       const parent = button.parentNode;
       const qty = parent.querySelector(".quantity");
