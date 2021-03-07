@@ -1,0 +1,65 @@
+#shipping-info,
+#add-product,
+#edit-product,
+#edit-header,
+#items-in-cart {
+  .heading,
+  label {
+    text-transform: uppercase;
+    color: $shade-lavender-gray;
+    font-size: 1.25rem;
+    font-weight: 400;
+    padding-bottom: 0.8rem;
+  }
+
+  input,
+  textarea {
+    border-radius: 12px;
+    border-color: $primary;
+  }
+
+  input {
+    height: 42px;
+  }
+
+  #featuredStatus {
+    font-size: 1rem;
+  }
+}
+
+#edit {
+  @media (max-width: 566px) {
+    .btn {
+      width: 100%;
+      display: block;
+    }
+  }
+}
+
+.search-form {
+  @include shadow;
+}
+
+.product-search {
+  border: none;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 12px;
+  height: 42px;
+  padding-left: 1rem;
+  &::placeholder {
+    text-transform: uppercase;
+  }
+}
+
+.product-search-button {
+  border: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 0;
+  background: white;
+  color: $body-copy-color;
+  padding-right: 1rem;
+}

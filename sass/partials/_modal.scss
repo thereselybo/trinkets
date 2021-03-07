@@ -1,0 +1,38 @@
+.modal {
+  .modal-content {
+    border-radius: 0;
+    border: none;
+    background: none;
+  }
+
+  .modal-body {
+    background: white;
+  }
+
+  .modal-header {
+    background: $primary-gray;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+  .modal-footer {
+    background: $primary-gray;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+  }
+
+  label {
+    padding: 0;
+    color: $shade-lavender-gray;
+    text-transform: uppercase;
+  }
+
+  input {
+    border-radius: 12px;
+    border-color: $primary;
+  }
+
+  .flaticon::before {
+    font-size: 1rem;
+    margin-right: 1rem;
+  }
+}

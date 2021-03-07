@@ -1,0 +1,45 @@
+#cart {
+  @media (min-width: 768px) {
+    .border-md-top {
+      border-top: 1px solid $primary-gray;
+    }
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .total-price {
+    font-size: 1.5rem;
+  }
+
+  .items-button {
+    background: $primary-lavender-dark;
+    border: none;
+    border-radius: 50%;
+    padding: 2px 8px;
+
+    .flaticon {
+      color: white;
+
+      &::before {
+        font-size: 0.7rem;
+      }
+    }
+  }
+
+  .product-image {
+    border-radius: $border-radius-lg;
+    padding-bottom: 100%;
+    @media (min-width: 567px) {
+      padding-bottom: 75%;
+    }
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}

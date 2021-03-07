@@ -1,0 +1,133 @@
+#product {
+  .pdp-main .card {
+    @include shadow;
+  }
+
+  .accordion {
+    @include shadow;
+  }
+
+  .h1 {
+    font-size: 2rem;
+  }
+
+  .mobile-display {
+    .carousel-inner {
+      transform: translateY(-1rem);
+      border-bottom-left-radius: 16px;
+      border-bottom-right-radius: 16px;
+    }
+    .carousel-item {
+      z-index: -100;
+    }
+
+    .card {
+      transform: translateY(-4rem);
+    }
+  }
+
+  .favorite-btn {
+    top: 0;
+    bottom: auto;
+    background: $primary;
+    padding: 6px 12px;
+    .flaticon-heart::before {
+      color: white;
+    }
+  }
+
+  .btn-primary .flaticon {
+    margin-left: 1rem;
+  }
+
+  .accordion-header {
+    background: $primary-gray;
+    padding: 1rem;
+    font-family: $heading-font;
+  }
+
+  .carousel-arrow {
+    transform: translateY(-55%);
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+  }
+
+  .carousel-arrow-left {
+    left: 2rem;
+  }
+
+  .carousel-arrow-right {
+    right: 2rem;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    opacity: 1;
+    color: $shade-lavender-gray;
+    .flaticon::before {
+      background: white;
+      padding: 0.7rem;
+      border-radius: 50%;
+      font-size: 0.9rem;
+      @media (min-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  #productImageCarouselMobile {
+    .card-img-top {
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .desktop-display {
+    .pdp-main {
+      background: $secondary-lavender-light;
+    }
+    .carousel-item {
+      background-size: cover;
+    }
+
+    .carousel-indicators li {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+    }
+
+    .carousel-inner {
+      border-top-left-radius: 16px;
+      border-bottom-left-radius: 16px;
+      min-height: 400px;
+      max-height: 440px;
+    }
+
+    .pdp-details {
+      transform: translateY(-51px);
+    }
+
+    .tabs .nav-item {
+      background: $tint-lavender-light;
+      padding: 0.8rem 1rem;
+      color: $primary-lavender-dark;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+
+      h5 {
+        margin-bottom: 0;
+      }
+
+      &.active {
+        background: $primary-gray;
+      }
+    }
+
+    .favorite-btn {
+      margin-right: 2rem;
+    }
+  }
+}

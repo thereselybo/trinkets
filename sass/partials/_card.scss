@@ -1,0 +1,78 @@
+.card {
+  border: none;
+  border-radius: $border-radius-lg;
+
+  .card-img-top {
+    border-radius: $border-radius-lg;
+  }
+}
+
+#cart,
+#add,
+#edit {
+  .card {
+    @include shadow;
+  }
+}
+
+.product-card {
+  .card-img-top {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 767px) {
+    .h2 {
+      font-size: 1rem;
+      margin-top: auto;
+    }
+    .h5 {
+      font-size: 1rem;
+    }
+
+    .card-body {
+      padding: 1rem;
+    }
+
+    .mobile-button {
+      bottom: 0;
+      right: 0;
+      padding: 0.7rem 1.1rem;
+      .flaticon-shopping-cart-2::before {
+        font-size: 1rem;
+        color: $primary;
+      }
+    }
+
+    .favorite-btn .flaticon-heart::before {
+      font-size: 1rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .embed-responsive-1by1::before {
+      padding-top: 75%;
+    }
+
+    .flaticon-shopping-cart-2::before {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.favorite-btn {
+  border: none;
+  border-radius: 50%;
+  background: white;
+  bottom: 0;
+  right: 0;
+  margin: 1rem;
+
+  .flaticon-heart::before {
+    color: $shade-lavender-dark;
+  }
+}

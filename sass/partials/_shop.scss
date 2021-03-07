@@ -1,0 +1,65 @@
+#categories {
+  main {
+    white-space: nowrap;
+  }
+
+  main .flaticon::before {
+    color: $shade-lavender-dark;
+    font-size: 1.8rem;
+  }
+
+  #sale {
+    background: $secondary-mint;
+  }
+
+  #christmas {
+    background: $secondary-lemon;
+  }
+
+  #wall-decor {
+    background: $secondary-peach;
+  }
+
+  #textiles {
+    background: $secondary-lavender;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+#shop {
+  .sidebar {
+  }
+  .categories a {
+    font-family: $heading-font;
+    color: $primary-gray-dark;
+
+    &.active {
+      color: $primary-lavender-dark;
+    }
+  }
+
+  .sort-by {
+    position: relative;
+
+    .dropdown {
+      position: absolute;
+      right: 0;
+      top: -2.5rem;
+    }
+
+    .dropdown-toggle {
+      color: $shade-lavender-gray;
+      text-transform: uppercase;
+      i::before {
+        font-size: 0.8rem;
+        margin-left: 0.8rem;
+      }
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

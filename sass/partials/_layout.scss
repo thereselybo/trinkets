@@ -1,0 +1,15 @@
+body {
+  padding-top: 70px;
+}
+
+#cart,
+#add,
+#edit {
+  background: $secondary-lavender-light;
+}
+
+#index main {
+  @media (min-width: 992px) {
+    margin-top: -7rem;
+  }
+}

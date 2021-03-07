@@ -1,0 +1,30 @@
+footer {
+  background: $shade-lavender-gray;
+
+  font-size: 0.9rem;
+
+  h5 {
+    font-size: 1.2rem;
+  }
+
+  h5,
+  .nav-item,
+  p,
+  a,
+  div {
+    color: $secondary-lavender-light;
+    font-family: $base-font;
+    text-transform: initial;
+    @include transition;
+  }
+
+  a:hover,
+  a:active {
+    color: $primary;
+    @include transition;
+  }
+
+  .logo {
+    width: 100px;
+  }
+}

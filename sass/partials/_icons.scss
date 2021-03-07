@@ -1,0 +1,19 @@
+@import url("../../icon-font/flaticon.css");
+
+.flaticon {
+  height: 1rem;
+  cursor: pointer;
+}
+
+.flaticon:before {
+  margin: 0;
+}
+
+.favorite-btn .isFavorite::before {
+  color: $secondary-peach !important;
+}
+
+.flaticon-edit:before,
+.flaticon-trash:before {
+  font-size: 1rem;
+}

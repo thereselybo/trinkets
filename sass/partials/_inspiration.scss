@@ -1,0 +1,55 @@
+#inspiration {
+  .card {
+    text-transform: uppercase;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    color: $shade-lavender-dark;
+  }
+
+  .card-overlay {
+    min-height: 200px;
+    padding: 3rem;
+    cursor: pointer;
+
+    @media (min-width: 768px) {
+      opacity: 0;
+      @include transition;
+
+      &:hover {
+        opacity: 1;
+        @include transition;
+      }
+    }
+  }
+
+  #cocktail-recipes {
+    background-image: url("../../img/cocktails.jpg");
+
+    .card-overlay {
+      background: $secondary-mint;
+    }
+  }
+
+  #christmas-table {
+    background-image: url("../../img/table-setting.jpg");
+    .card-overlay {
+      background: $secondary-lemon;
+    }
+  }
+
+  #present-tips {
+    background-image: url("../../img/presents.jpg");
+    .card-overlay {
+      background: $secondary-peach;
+    }
+  }
+
+  #interior-trends {
+    background-image: url("../../img/fall-trends.jpg");
+    .card-overlay {
+      background: $secondary-lavender;
+    }
+  }
+}

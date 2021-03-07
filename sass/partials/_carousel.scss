@@ -1,0 +1,61 @@
+@import "../../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss";
+@import "../../node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+
+#featured .row {
+  max-width: 80%;
+  margin: auto;
+}
+
+#instagram {
+  .row {
+    max-width: 80%;
+    margin: auto;
+  }
+}
+
+.glide__arrow {
+  background: $primary-lavender-dark;
+  border-radius: 50px;
+  border: none;
+  padding: 0.8rem;
+
+  .flaticon:before {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 566px) {
+  .glide__slide .card {
+    max-width: 80%;
+    margin: auto;
+
+    .h5 {
+      font-size: 1.25rem;
+    }
+    .h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  .glide__arrow--left {
+    left: -2em;
+  }
+
+  .glide__arrow--right {
+    right: -2em;
+  }
+}
+
+@media (min-width: 567px) {
+  .glide__arrow--left {
+    left: -6em;
+  }
+
+  .glide__arrow--right {
+    right: -6em;
+  }
+}
+
+#instagram .embed-responsive-item {
+  background-size: cover;
+}

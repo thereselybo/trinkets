@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "homes",
+  "info": {
+    "name": "Home",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "hero_banner_alt_text": {
+      "type": "string"
+    },
+    "hero_banner": {
+      "type": "string"
+    },
+    "hero_button": {
+      "type": "string"
+    },
+    "hero_caption": {
+      "type": "string"
+    },
+    "hero_button_text": {
+      "type": "string"
+    }
+  }
+}

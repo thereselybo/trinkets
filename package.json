@@ -1,0 +1,25 @@
+{
+  "name": "oslo-semester-2-project-thereselybo",
+  "version": "1.0.0",
+  "description": "<img src=\"./.readme/noroff-light.png\" width=\"160\" align=\"right\">",
+  "main": "index.js",
+  "dependencies": {
+    "@glidejs/glide": "^3.4.1",
+    "bootstrap": "^4.5.3",
+    "sass": "^1.29.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Noroff-Fagskole/oslo-semester-2-project-thereselybo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Noroff-Fagskole/oslo-semester-2-project-thereselybo/issues"
+  },
+  "homepage": "https://github.com/Noroff-Fagskole/oslo-semester-2-project-thereselybo#readme"
+}

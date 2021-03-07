@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;700&family=Montserrat:wght@400;500&display=swap");
+
+// primary colors
+$primary-lavender: #8680bd;
+$primary-lavender-dark: #303c66;
+
+// secondary colors
+$secondary-lavender-light: #e7e6ee;
+$secondary-lavender: #d1cde7;
+$secondary-mint: #abdac3;
+$secondary-lemon: #efe8a3;
+$secondary-peach: #f2c7c2;
+
+// tints and shades
+$tint-lavender-light: #f1f0f2;
+$tint-lavender-gray: #9292a8;
+$shade-lavender-gray: #66657c;
+$shade-lavender-dark: #464656;
+$primary-gray: #f5f5f5;
+$primary-gray-dark: #707070;
+
+// typography
+$heading-font: "Jost", sans-serif;
+$heading-weight: 700;
+$heading-color: $primary-lavender-dark;
+$heading-color-secondary: $shade-lavender-dark;
+
+$base-font: "Montserrat", sans-serif;
+$body-copy-color: $shade-lavender-gray;
+
+@mixin shadow {
+  filter: drop-shadow(0 0 20px rgba(102, 101, 124, 0.1));
+}
+
+@mixin transition {
+  transition: all ease-in 0.1s;
+}
+
+// overriding bootstrap defaults
+$gray-300: $primary-gray;
+$primary: $primary-lavender;
+$secondary: $shade-lavender-gray;
+$body-bg: $primary-gray;
+$body-color: $body-copy-color;
+$headings-font-family: $heading-font;
+$font-family-base: $base-font;
+$border-radius: 12px;
+$border-radius-lg: 16px;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 900px,
+  xl: 900px,
+);
+
+//////////////
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
