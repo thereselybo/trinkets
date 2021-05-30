@@ -6,32 +6,26 @@ import handleFaves from "./handleFaves.js";
 import updateHead from "../common/updateHead.js";
 import addToCart from "../cart/addToCart.js";
 import { hostedUrl } from "../../settings/variables.js";
-
 createMenu();
-
 (function () {
-  const title = "Favorites";
-  const desc = "Which product is your favorite?";
-  const img = `${hostedUrl}/img/logo-horizontal.svg`;
-  const url = location.href;
-  updateHead(title, desc, img, url);
+    const title = "Favorites";
+    const desc = "Which product is your favorite?";
+    const img = `${hostedUrl}/img/logo-horizontal.svg`;
+    const url = location.href;
+    updateHead(title, desc, img, url);
 })();
-
 export default function renderFaves() {
-  const container = document.querySelector(".products-container");
-  const messageContainer = "#products .message-container";
-  const faves = getFromStorage(favesKey);
-
-  container.innerHTML = "";
-
-  if (faves && faves.length) {
-    faves.forEach((fave) => {
-      const title = fave.title;
-      const image = fave.image;
-      const price = fave.price;
-      const id = fave.id;
-
-      const card = `
+    const container = document.querySelector(".products-container");
+    const messageContainer = "#products .message-container";
+    const faves = getFromStorage(favesKey);
+    container.innerHTML = "";
+    if (faves && faves.length) {
+        faves.forEach((fave) => {
+            const title = fave.title;
+            const image = fave.image;
+            const price = fave.price;
+            const id = fave.id;
+            const card = `
         <div class="col-6 col-md-4 flex-fill mb-4">
             <div class="card h-100 product-card">
                 <div class="embed-responsive embed-responsive-1by1">
@@ -68,19 +62,14 @@ export default function renderFaves() {
             </div>
             </div>
         </div>`;
-
-      container.innerHTML += card;
-    });
-  } else {
-    displayMessage(
-      messageContainer,
-      "light",
-      "You have not added any products to favorites yet"
-    );
-  }
-  handleFaves();
-  removeFromFaves();
-  addToCart();
+            container.innerHTML += card;
+        });
+    }
+    else {
+        displayMessage(messageContainer, "light", "You have not added any products to favorites yet");
+    }
+    handleFaves();
+    removeFromFaves();
+    addToCart();
 }
-
 renderFaves();

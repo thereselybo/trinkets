@@ -1,13 +1,11 @@
 import login from "./login.js";
 import { checkIfAdmin, checkIfUser } from "../../utils/storage.js";
 import logout from "./logout.js";
-
 let container = "";
 let adminHtml = "";
 let userHtml = "";
-
 export default function accountModal() {
-  const modal = `
+    const modal = `
     <div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="accountModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -45,19 +43,16 @@ export default function accountModal() {
             </div>
         </div>
     </div>`;
-
-  container = document.querySelector(".modal-container");
-  container.innerHTML = modal;
-
-  const registerLink = document.querySelector("#register-link");
-  const modalTitle = document.querySelector(".modal-title");
-  const modalBody = document.querySelector(".modal-body");
-  const modalFooter = document.querySelector(".modal-footer");
-
-  if (registerLink) {
-    registerLink.onclick = () => {
-      modalTitle.innerText = "Register";
-      modalBody.innerHTML = `
+    container = document.querySelector(".modal-container");
+    container.innerHTML = modal;
+    const registerLink = document.querySelector("#register-link");
+    const modalTitle = document.querySelector(".modal-title");
+    const modalBody = document.querySelector(".modal-body");
+    const modalFooter = document.querySelector(".modal-footer");
+    if (registerLink) {
+        registerLink.onclick = () => {
+            modalTitle.innerText = "Register";
+            modalBody.innerHTML = `
             <form id="register-form" class="needs-validation" novalidate>
                 <div class="form-group">
                     <label for="username">Username</label>
@@ -82,13 +77,12 @@ export default function accountModal() {
                 </div>
                 <div class="message-container"></div>
             </form>`;
-      modalFooter.innerHTML = `
+            modalFooter.innerHTML = `
             <button type="submit" id="submit-button" form="register-form" class="btn btn-primary btn-block py-2 my-2">Register</button>
             `;
-    };
-  }
-
-  adminHtml = `
+        };
+    }
+    adminHtml = `
     <div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="accountModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -122,8 +116,7 @@ export default function accountModal() {
             </div>
         </div>
     </div>`;
-
-  userHtml = `
+    userHtml = `
     <div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="accountModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -151,18 +144,14 @@ export default function accountModal() {
             </div>
         </div>
     </div>`;
-
-  login();
-  updateModal();
+    login();
+    updateModal();
 }
-
 export function updateModal() {
-  const admin = checkIfAdmin();
-  const user = checkIfUser();
-
-  if (admin) {
-    container.innerHTML = adminHtml;
-  }
-
-  logout();
+    const admin = checkIfAdmin();
+    const user = checkIfUser();
+    if (admin) {
+        container.innerHTML = adminHtml;
+    }
+    logout();
 }

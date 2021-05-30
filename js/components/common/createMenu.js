@@ -2,12 +2,10 @@ import accountModal from "../account/accountModal.js";
 import { updateCartIcon } from "../cart/addToCart.js";
 import searchProducts from "../search/searchProducts.js";
 import hoverOverIcons from "./hoverOverIcons.js";
-
 export default function createMenu() {
-  const container = document.querySelector(".nav-container");
-  const pathname = location.pathname;
-
-  const mobileCategoryNav = `
+    const container = document.querySelector(".nav-container");
+    const pathname = location.pathname;
+    const mobileCategoryNav = `
     <div class="container d-block d-lg-none pb-3">
             <ul class="categories overflow-auto pl-1 pt-2 mb-0 text-nowrap">
                 <li class="d-inline">
@@ -34,8 +32,7 @@ export default function createMenu() {
                 </li>
             </ul>
         </div>`;
-
-  container.innerHTML = `
+    container.innerHTML = `
     <nav class="navbar-light fixed-top">
         <div class="container px-lg-0 flex-column">
 
@@ -67,18 +64,14 @@ export default function createMenu() {
                 >
                     <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="./index.html" class="nav-link mx-2 ${
-                          pathname === "/index.html" ? "active" : ""
-                        }">Home</a>
+                        <a href="./index.html" class="nav-link mx-2 ${pathname === "/index.html" ? "active" : ""}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="./categories.html" class="nav-link mx-2 ${
-                          pathname === "/categories.html" ||
-                          pathname === "/products.html" ||
-                          pathname === "/product.html"
-                            ? "active"
-                            : ""
-                        }">Shop</a>
+                        <a href="./categories.html" class="nav-link mx-2 ${pathname === "/categories.html" ||
+        pathname === "/products.html" ||
+        pathname === "/product.html"
+        ? "active"
+        : ""}">Shop</a>
                     </li>
                     <li class="nav-item">
                         <a href="javascript:void(0);" class="nav-link mx-2">About</a>
@@ -174,21 +167,17 @@ export default function createMenu() {
         ${pathname === "/products.html" ? mobileCategoryNav : ""}
     </nav>
     <div class="modal-container"></div>`;
-
-  accountModal();
-  toggleSearchField();
-  searchProducts();
-  updateCartIcon();
-  hoverOverIcons();
+    accountModal();
+    toggleSearchField();
+    searchProducts();
+    updateCartIcon();
+    hoverOverIcons();
 }
-
 createMenu();
-
 function toggleSearchField() {
-  const searchBtn = document.querySelector("#search-button");
-  const searchField = document.querySelector("#nav-search-desktop");
-
-  searchBtn.onclick = () => {
-    searchField.classList.toggle("active");
-  };
+    const searchBtn = document.querySelector("#search-button");
+    const searchField = document.querySelector("#nav-search-desktop");
+    searchBtn.onclick = () => {
+        searchField.classList.toggle("active");
+    };
 }

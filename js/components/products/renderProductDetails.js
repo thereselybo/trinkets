@@ -4,38 +4,30 @@ import handleFaves from "../favorites/handleFaves.js";
 import addToCart from "../cart/addToCart.js";
 import { favesKey, getFromStorage } from "../../utils/storage.js";
 import updateHead from "../common/updateHead.js";
-
 const container = document.querySelector(".product-container");
-
 let mobileDisplay = "";
 let desktopDisplay = "";
-
 export default function renderProductDetails(currentProduct) {
-  const product = findProductSpecs(currentProduct);
-
-  const title = product.title;
-  const price = product.price;
-  const id = product.id;
-  const intro = product.intro;
-  const description = product.description;
-  const details = product.details;
-  const image = product.productImg;
-
-  const ogTitle = `${title} - `;
-  const ogDesc = intro;
-  const ogImg = image;
-  const ogUrl = location.href;
-  updateHead(ogTitle, ogDesc, ogImg, ogUrl);
-
-  const faves = getFromStorage(favesKey);
-  const isAlreadyFave = faves.find((fave) => parseInt(fave.id) === id);
-
-  let faveClass = "";
-  if (isAlreadyFave) {
-    faveClass = "isFavorite";
-  }
-
-  mobileDisplay = `
+    const product = findProductSpecs(currentProduct);
+    const title = product.title;
+    const price = product.price;
+    const id = product.id;
+    const intro = product.intro;
+    const description = product.description;
+    const details = product.details;
+    const image = product.productImg;
+    const ogTitle = `${title} - `;
+    const ogDesc = intro;
+    const ogImg = image;
+    const ogUrl = location.href;
+    updateHead(ogTitle, ogDesc, ogImg, ogUrl);
+    const faves = getFromStorage(favesKey);
+    const isAlreadyFave = faves.find((fave) => parseInt(fave.id) === id);
+    let faveClass = "";
+    if (isAlreadyFave) {
+        faveClass = "isFavorite";
+    }
+    mobileDisplay = `
     <div class="mobile-display">
         <section class="pdp-main">
             <div id="productImageCarouselMobile" class="carousel slide" data-ride="false">
@@ -203,8 +195,7 @@ export default function renderProductDetails(currentProduct) {
             </div>
         </section>
     </div>`;
-
-  desktopDisplay = `
+    desktopDisplay = `
     <div class="desktop-display">
         <section class="pdp-main pt-5 pb-5">
             <div class="container">
@@ -392,18 +383,16 @@ export default function renderProductDetails(currentProduct) {
             </div>
         </section>
     </div>`;
-
-  updateHtml();
-  handleFaves();
-  addToCart();
+    updateHtml();
+    handleFaves();
+    addToCart();
 }
-
 function updateHtml() {
-  if (breakpoint.matches) {
-    container.innerHTML = mobileDisplay;
-  } else {
-    container.innerHTML = desktopDisplay;
-  }
+    if (breakpoint.matches) {
+        container.innerHTML = mobileDisplay;
+    }
+    else {
+        container.innerHTML = desktopDisplay;
+    }
 }
-
 breakpoint.addListener(updateHtml);
