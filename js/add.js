@@ -93,7 +93,7 @@ function addProduct(title, price, category, intro, description, details, image, 
                 }, 2000);
             }
             if (product.error) {
-                displayMessage(messageContainer, "danger", json.error);
+                displayMessage(messageContainer, "danger", product.error);
             }
         }
         catch (error) {

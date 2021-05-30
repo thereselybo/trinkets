@@ -65,6 +65,25 @@ let featuredStatus = false;
         }
     });
 })();
+// interface ProductImage {
+//   formats: {
+//     medium: {
+//       url: string;
+//     };
+//   };
+// }
+// interface Product {
+//   title: string;
+//   price: string;
+//   category: string;
+//   introduction: string;
+//   description: string;
+//   details: string;
+//   id: string;
+//   image_url: string;
+//   image: ProductImage;
+//   featured: boolean;
+// }
 function renderEditForm(products) {
     console.log(products);
     let productExists = [];

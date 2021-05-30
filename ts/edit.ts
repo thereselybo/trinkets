@@ -11,6 +11,7 @@ import validateElement, { validateLink } from "./utils/validation.js";
 import updateProduct from "./components/products/updateProduct.js";
 import deleteBtn from "./components/products/deleteBtn.js";
 import updateHead from "./components/common/updateHead.js";
+import { Product } from "./settings/interfaces.js";
 
 createMenu();
 
@@ -70,26 +71,26 @@ let featuredStatus: boolean = false;
   }
 })();
 
-interface ProductImage {
-  formats: {
-    medium: {
-      url: string;
-    };
-  };
-}
+// interface ProductImage {
+//   formats: {
+//     medium: {
+//       url: string;
+//     };
+//   };
+// }
 
-interface Product {
-  title: string;
-  price: string;
-  category: string;
-  introduction: string;
-  description: string;
-  details: string;
-  id: string;
-  image_url: string;
-  image: ProductImage;
-  featured: boolean;
-}
+// interface Product {
+//   title: string;
+//   price: string;
+//   category: string;
+//   introduction: string;
+//   description: string;
+//   details: string;
+//   id: string;
+//   image_url: string;
+//   image: ProductImage;
+//   featured: boolean;
+// }
 
 function renderEditForm(products: Product[]) {
   console.log(products);

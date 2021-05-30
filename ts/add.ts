@@ -8,6 +8,7 @@ import validateElement, {
 } from "./utils/validation.js";
 import toggleFeaturedSwitch from "./components/misc/toggleFeaturedSwitch.js";
 import updateHead from "./components/common/updateHead.js";
+import { Product } from "./settings/interfaces.js";
 
 createMenu();
 toggleFeaturedSwitch();
@@ -25,16 +26,19 @@ if (!admin) {
   location.href = "./";
 }
 
-const form = document.querySelector("#add-product");
-const title = document.querySelector("#product-name");
-const price = document.querySelector("#product-price");
-const category = document.querySelector("#category");
-const intro = document.querySelector("#intro");
-const description = document.querySelector("#description");
-const details = document.querySelector("#details");
-const imgLink = document.querySelector("#image-link");
-const featured = document.querySelector("#featured");
-const messageContainer = "#add-product .message-container";
+const form = document.querySelector("#add-product") as HTMLFormElement;
+const title = document.querySelector("#product-name") as HTMLInputElement;
+const price = document.querySelector("#product-price") as HTMLInputElement;
+const category = document.querySelector("#category") as HTMLInputElement;
+const intro = document.querySelector("#intro") as HTMLTextAreaElement;
+const description = document.querySelector(
+  "#description"
+) as HTMLTextAreaElement;
+const details = document.querySelector("#details") as HTMLTextAreaElement;
+const imgLink = document.querySelector("#image-link") as HTMLInputElement;
+const featured = document.querySelector("#featured") as HTMLInputElement;
+
+const messageContainer: string = "#add-product .message-container";
 
 form.onsubmit = (e) => {
   e.preventDefault();
@@ -75,14 +79,14 @@ form.onsubmit = (e) => {
 };
 
 async function addProduct(
-  title,
-  price,
-  category,
-  intro,
-  description,
-  details,
-  image,
-  featured
+  title: string,
+  price: string,
+  category: string,
+  intro: string,
+  description: string,
+  details: string,
+  image: string,
+  featured: boolean
 ) {
   image = checkUrlProtocol(image);
 
@@ -120,7 +124,7 @@ async function addProduct(
       }, 2000);
     }
     if (product.error) {
-      displayMessage(messageContainer, "danger", json.error);
+      displayMessage(messageContainer, "danger", product.error);
     }
   } catch (error) {
     displayMessage(messageContainer, "danger", error);
