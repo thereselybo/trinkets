@@ -5,10 +5,10 @@ import { baseUrl, hostedUrl } from "./settings/variables.js";
 import updateHead from "./components/common/updateHead.js";
 
 (function () {
-  const title = "";
-  const desc = "An home decor online store";
-  const img = `${hostedUrl}/img/logo-horizontal.svg`;
-  const url = location.href;
+  const title: string = "";
+  const desc: string = "An home decor online store";
+  const img: string = `${hostedUrl}/img/logo-horizontal.svg`;
+  const url: string = location.href;
   updateHead(title, desc, img, url);
 })();
 
@@ -16,14 +16,16 @@ createMenu();
 renderFeaturedProducts();
 
 (async function () {
-  const container = document.querySelector(".header-content");
-  const headerUrl = `${baseUrl}/home`;
-  const caption = document.querySelector("#header-caption");
-  const image = document.querySelector(".header-img");
-  const button = document.querySelector("#header-button");
+  const container = document.querySelector(".header-content") as HTMLDivElement;
+  const headerUrl: string = `${baseUrl}/home`;
+  const caption = document.querySelector(
+    "#header-caption"
+  ) as HTMLHeadingElement;
+  const image = document.querySelector(".header-img") as HTMLDivElement;
+  const button = document.querySelector("#header-button") as HTMLAnchorElement;
 
   try {
-    const response = await fetch(headerUrl);
+    const response: Response = await fetch(headerUrl);
     const header = await response.json();
 
     caption.innerHTML = header.hero_caption;
