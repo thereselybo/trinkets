@@ -24,11 +24,11 @@ export function checkIfUser() {
   }
 }
 
-export function saveToStorage(key, value) {
+export function saveToStorage(key: string, value: string | {}) {
   localStorage.setItem(key, JSON.stringify(value));
 }
 
-export function getFromStorage(key) {
+export function getFromStorage(key: string) {
   const value = localStorage.getItem(key);
   if (!value) {
     return [];
@@ -36,6 +36,6 @@ export function getFromStorage(key) {
   return JSON.parse(value);
 }
 
-export function removeFromStorage(key) {
+export function removeFromStorage(key: string) {
   localStorage.removeItem(key);
 }
