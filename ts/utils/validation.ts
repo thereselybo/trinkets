@@ -1,6 +1,11 @@
-export default function validateElement(element, length) {
-  const parentElement = element.parentElement;
-  const errorMessage = parentElement.querySelector(".invalid-feedback");
+export default function validateElement(
+  element: HTMLInputElement | HTMLTextAreaElement,
+  length: number
+) {
+  const parentElement = element.parentElement as HTMLElement;
+  const errorMessage = parentElement.querySelector(
+    ".invalid-feedback"
+  ) as HTMLDivElement;
 
   if (checkLength(element, length)) {
     errorMessage.style.display = "none";
@@ -11,16 +16,22 @@ export default function validateElement(element, length) {
   }
 }
 
-function checkLength(element, length) {
+function checkLength(
+  element: HTMLInputElement | HTMLTextAreaElement,
+  length: number
+) {
   return element.value.trim().length >= length;
 }
 
-export function validateLink(element) {
-  const regEx = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/;
+export function validateLink(element: HTMLInputElement) {
+  const regEx =
+    /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/;
   const patternMatches = regEx.test(element.value.trim());
 
-  const parentElement = element.parentElement;
-  const errorMessage = parentElement.querySelector(".invalid-feedback");
+  const parentElement = element.parentElement as HTMLElement;
+  const errorMessage = parentElement.querySelector(
+    ".invalid-feedback"
+  ) as HTMLDivElement;
 
   if (checkLength(element, 1)) {
     if (patternMatches) {
@@ -36,7 +47,7 @@ export function validateLink(element) {
   }
 }
 
-export function checkUrlProtocol(url) {
+export function checkUrlProtocol(url: string) {
   if (url && url.length) {
     if (url.includes("http://")) {
       return url;
@@ -50,12 +61,14 @@ export function checkUrlProtocol(url) {
   }
 }
 
-export function validateEmail(element) {
+export function validateEmail(element: HTMLInputElement) {
   const regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
   const patternMatches = regEx.test(element.value.trim());
-  
-  const parentElement = element.parentElement;
-  const errorMessage = parentElement.querySelector(".invalid-feedback");
+
+  const parentElement = element.parentElement as HTMLElement;
+  const errorMessage = parentElement.querySelector(
+    ".invalid-feedback"
+  ) as HTMLDivElement;
 
   if (checkLength(element, 1)) {
     if (patternMatches) {

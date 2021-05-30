@@ -8,7 +8,6 @@ import validateElement, {
 } from "./utils/validation.js";
 import toggleFeaturedSwitch from "./components/misc/toggleFeaturedSwitch.js";
 import updateHead from "./components/common/updateHead.js";
-import { Product } from "./settings/interfaces.js";
 
 createMenu();
 toggleFeaturedSwitch();
