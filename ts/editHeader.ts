@@ -13,14 +13,16 @@ if (!admin) {
   location.href = "./";
 }
 
-const form = document.querySelector("#edit-header");
-const caption = document.querySelector("#caption");
-const imageLink = document.querySelector("#image-link");
-const buttonLink = document.querySelector("#button-link");
-const buttonText = document.querySelector("#button-text");
+const form = document.querySelector("#edit-header") as HTMLFormElement;
+const caption = document.querySelector("#caption") as HTMLTextAreaElement;
+const imageLink = document.querySelector("#image-link") as HTMLInputElement;
+const buttonLink = document.querySelector("#button-link") as HTMLInputElement;
+const buttonText = document.querySelector("#button-text") as HTMLInputElement;
 
-const messageContainer = document.querySelector("#edit-header .fetch-error");
-const spinner = document.querySelector("#spinner");
+const messageContainer = document.querySelector(
+  "#edit-header .fetch-error"
+) as HTMLDivElement;
+const spinner = document.querySelector("#spinner") as HTMLDivElement;
 
 (async function () {
   const headerUrl = `${baseUrl}/home`;
@@ -40,7 +42,7 @@ const spinner = document.querySelector("#spinner");
     const url = location.href;
     updateHead(title, desc, img, url);
   } catch (error) {
-    displayMessage(messageContainer, "danger, error");
+    displayMessage(messageContainer, "danger", error);
   } finally {
     spinner.style.display = "none";
     form.style.display = "block";

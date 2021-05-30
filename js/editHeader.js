@@ -43,7 +43,7 @@ const spinner = document.querySelector("#spinner");
             updateHead(title, desc, img, url);
         }
         catch (error) {
-            displayMessage(messageContainer, "danger, error");
+            displayMessage(messageContainer, "danger", error);
         }
         finally {
             spinner.style.display = "none";

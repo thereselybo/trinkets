@@ -9,22 +9,22 @@ import filterProducts from "./components/search/filterProducts.js";
 import updateHead from "./components/common/updateHead.js";
 
 (function () {
-  const title = `${document.title} - `;
-  const desc = "Browse our many lovely products";
-  const img = `${hostedUrl}/img/logo-horizontal.svg`;
-  const url = location.href;
+  const title: string = `${document.title} - `;
+  const desc: string = "Browse our many lovely products";
+  const img: string = `${hostedUrl}/img/logo-horizontal.svg`;
+  const url: string = location.href;
   updateHead(title, desc, img, url);
 })();
 
 export default async function getProducts() {
-  const pathname = location.pathname;
+  const pathname: string = location.pathname;
   if (pathname === "/products.html") {
     const searchValue = getFromStorage(searchKey);
-    const productsUrl = `${baseUrl}/products`;
-    const messageContainer = "#products .message-container";
+    const productsUrl: string = `${baseUrl}/products`;
+    const messageContainer: string = "#products .message-container";
 
     try {
-      const response = await fetch(productsUrl);
+      const response: Response = await fetch(productsUrl);
       const products = await response.json();
 
       if (searchValue && searchValue.length) {

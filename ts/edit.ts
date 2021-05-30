@@ -29,27 +29,29 @@ if (!admin) {
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
-const id = params.get("id");
+const id: string | null = params.get("id");
 
 if (!id) {
   document.location.href = "./404.html";
 }
 
-const form = document.querySelector("#edit-product");
-const title = document.querySelector("#product-name");
-const price = document.querySelector("#product-price");
-const category = document.querySelector("#category");
-const intro = document.querySelector("#intro");
-const description = document.querySelector("#description");
-const details = document.querySelector("#details");
-const imgLink = document.querySelector("#image-link");
-const featured = document.querySelector("#featured");
-const idInput = document.querySelector("#id");
+const form = document.querySelector("#edit-product") as HTMLFormElement;
+const title = document.querySelector("#product-name") as HTMLInputElement;
+const price = document.querySelector("#product-price") as HTMLInputElement;
+const category = document.querySelector("#category") as HTMLInputElement;
+const intro = document.querySelector("#intro") as HTMLTextAreaElement;
+const description = document.querySelector(
+  "#description"
+) as HTMLTextAreaElement;
+const details = document.querySelector("#details") as HTMLTextAreaElement;
+const imgLink = document.querySelector("#image-link") as HTMLInputElement;
+const featured = document.querySelector("#featured") as HTMLInputElement;
+const idInput = document.querySelector("#id") as HTMLInputElement;
 
-const messageContainer = "#edit-product .fetch-error";
-const spinner = document.querySelector("#spinner");
+const messageContainer: string = "#edit-product .fetch-error";
+const spinner = document.querySelector("#spinner") as HTMLDivElement;
 
-let featuredStatus = false;
+let featuredStatus: boolean = false;
 
 (async function () {
   const productUrl = `${baseUrl}/products`;
@@ -61,18 +63,45 @@ let featuredStatus = false;
     renderEditForm(products);
     deleteBtn(id);
   } catch (error) {
-    displayMessage(messageContainer, "danger, error");
+    displayMessage(messageContainer, "danger", error);
   } finally {
     spinner.style.display = "none";
     form.style.display = "block";
   }
 })();
 
-function renderEditForm(products) {
-  //checks if product exists in database
-  const productExists = products.filter(
-    (product) => product.id === parseInt(id)
-  );
+interface ProductImage {
+  formats: {
+    medium: {
+      url: string;
+    };
+  };
+}
+
+interface Product {
+  title: string;
+  price: string;
+  category: string;
+  introduction: string;
+  description: string;
+  details: string;
+  id: string;
+  image_url: string;
+  image: ProductImage;
+  featured: boolean;
+}
+
+function renderEditForm(products: Product[]) {
+  console.log(products);
+
+  let productExists: Product[] = [];
+
+  if (id) {
+    //checks if product exists in database
+    productExists = products.filter(
+      (product) => product.id.toString() === id.toString()
+    );
+  }
 
   if (productExists && productExists.length) {
     const product = productExists[0];

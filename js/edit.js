@@ -57,7 +57,7 @@ let featuredStatus = false;
             deleteBtn(id);
         }
         catch (error) {
-            displayMessage(messageContainer, "danger, error");
+            displayMessage(messageContainer, "danger", error);
         }
         finally {
             spinner.style.display = "none";
@@ -66,8 +66,12 @@ let featuredStatus = false;
     });
 })();
 function renderEditForm(products) {
-    //checks if product exists in database
-    const productExists = products.filter((product) => product.id === parseInt(id));
+    console.log(products);
+    let productExists = [];
+    if (id) {
+        //checks if product exists in database
+        productExists = products.filter((product) => product.id.toString() === id.toString());
+    }
     if (productExists && productExists.length) {
         const product = productExists[0];
         title.value = product.title;
