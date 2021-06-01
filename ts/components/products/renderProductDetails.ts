@@ -4,13 +4,16 @@ import handleFaves from "../favorites/handleFaves.js";
 import addToCart from "../cart/addToCart.js";
 import { favesKey, getFromStorage } from "../../utils/storage.js";
 import updateHead from "../common/updateHead.js";
+import { Product } from "../../settings/interfaces.js";
 
-const container = document.querySelector(".product-container");
+const container = document.querySelector(
+  ".product-container"
+) as HTMLDivElement;
 
 let mobileDisplay = "";
 let desktopDisplay = "";
 
-export default function renderProductDetails(currentProduct) {
+export default function renderProductDetails(currentProduct: Product) {
   const product = findProductSpecs(currentProduct);
 
   const title = product.title;
@@ -28,7 +31,9 @@ export default function renderProductDetails(currentProduct) {
   updateHead(ogTitle, ogDesc, ogImg, ogUrl);
 
   const faves = getFromStorage(favesKey);
-  const isAlreadyFave = faves.find((fave) => parseInt(fave.id) === id);
+  const isAlreadyFave = faves.find(
+    (fave: Product) => fave.id.toString() === id.toString()
+  );
 
   let faveClass = "";
   if (isAlreadyFave) {

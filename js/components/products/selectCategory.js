@@ -29,10 +29,13 @@ export default function selectCategory() {
         >
     </li>`;
     const title = document.querySelector("h1");
-    let formattedCategory = category;
-    if (category.includes("+")) {
-        formattedCategory = category.replace(/+/g, " ");
+    let formattedCategory;
+    if (category) {
+        formattedCategory = category;
+        if (category.includes("+")) {
+            formattedCategory = category.replace(/+/g, " ");
+        }
+        title.innerHTML = formattedCategory;
+        document.title = formattedCategory.toUpperCase();
     }
-    title.innerHTML = formattedCategory;
-    document.title = formattedCategory.toUpperCase();
 }

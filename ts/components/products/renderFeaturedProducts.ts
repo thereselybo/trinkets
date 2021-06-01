@@ -5,6 +5,7 @@ import { checkIfAdmin, getFromStorage, favesKey } from "../../utils/storage.js";
 import findProductSpecs from "./findProductSpecs.js";
 import handleFaves from "../favorites/handleFaves.js";
 import addToCart from "../cart/addToCart.js";
+import { Product } from "../../settings/interfaces.js";
 
 const admin = checkIfAdmin();
 
@@ -22,16 +23,20 @@ export default async function renderFeaturedProducts() {
   }
 }
 
-function renderFeatures(products) {
-  const featuredSection = document.querySelector("#featured");
-  const featuredContainer = document.querySelector(".featured-container");
+function renderFeatures(products: Product[]) {
+  const featuredSection = document.querySelector(
+    "#featured"
+  ) as HTMLInputElement;
+  const featuredContainer = document.querySelector(
+    ".featured-container"
+  ) as HTMLDivElement;
 
   featuredContainer.innerHTML = "";
 
   let glideSlides = "";
 
   // create array with only featured products
-  let featuredProducts = [];
+  let featuredProducts: Product[] = [];
   products.forEach((product) => {
     if (product.featured) {
       featuredProducts.push(product);
@@ -40,7 +45,6 @@ function renderFeatures(products) {
 
   // depending on how many featured products, create and render appropriate html
   if (featuredProducts && featuredProducts.length > 3) {
-
     featuredProducts.forEach((featuredProduct) => {
       const product = findProductSpecs(featuredProduct);
 
@@ -50,7 +54,9 @@ function renderFeatures(products) {
       const image = product.productImg;
 
       const faves = getFromStorage(favesKey);
-      const isAlreadyFave = faves.find((fave) => parseInt(fave.id) === id);
+      const isAlreadyFave = faves.find(
+        (fave: Product) => fave.id.toString() === id.toString()
+      );
 
       let faveClass = "";
       if (isAlreadyFave) {

@@ -3,7 +3,9 @@ const params = new URLSearchParams(queryString);
 const category = params.get("category");
 
 export default function selectCategory() {
-  const categoryContainer = document.querySelector("#category-container");
+  const categoryContainer = document.querySelector(
+    "#category-container"
+  ) as HTMLDivElement;
   categoryContainer.innerHTML = `
     <li class="py-1">
         <a class="py-1 ${category === "sale" ? "active" : ""}" 
@@ -30,11 +32,15 @@ export default function selectCategory() {
         >
     </li>`;
 
-  const title = document.querySelector("h1");
-  let formattedCategory = category;
-  if (category.includes("+")) {
-    formattedCategory = category.replace(/+/g, " ");
+  const title = document.querySelector("h1") as HTMLHeadingElement;
+  let formattedCategory: string;
+
+  if (category) {
+    formattedCategory = category;
+    if (category.includes("+")) {
+      formattedCategory = category.replace(/+/g, " ");
+    }
+    title.innerHTML = formattedCategory;
+    document.title = formattedCategory.toUpperCase();
   }
-  title.innerHTML = formattedCategory;
-  document.title = formattedCategory.toUpperCase();
 }

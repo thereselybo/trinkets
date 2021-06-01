@@ -1,4 +1,4 @@
-import { productImgPlaceholder, productImgAltPlaceholder, } from "../../settings/variables.js";
+import { productImgPlaceholder, productImgAltPlaceholder, baseUrl, } from "../../settings/variables.js";
 let productImg = productImgPlaceholder;
 let productImgAlt = productImgAltPlaceholder;
 export default function findProductSpecs(product) {

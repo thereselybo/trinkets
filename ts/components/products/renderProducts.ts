@@ -3,6 +3,7 @@ import findProductSpecs from "./findProductSpecs.js";
 import { getFromStorage, favesKey } from "../../utils/storage.js";
 import displayMessage from "../common/displayMessage.js";
 import selectCategory from "./selectCategory.js";
+import { Product } from "../../settings/interfaces.js";
 
 const admin = checkIfAdmin();
 
@@ -10,11 +11,11 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const category = params.get("category");
 
-export default function renderProducts(products) {
-  const container = document.querySelector(".products-container");
+export default function renderProducts(products: Product[]) {
+  const container = document.querySelector(".products-container") as HTMLDivElement;
   const messageContainer = document.querySelector(
     "#products .message-container"
-  );
+  ) as HTMLDivElement;
 
   let productsToRender = [];
   selectCategory();
@@ -40,7 +41,7 @@ export default function renderProducts(products) {
       const id = product.id;
       const image = product.productImg;
       const faves = getFromStorage(favesKey);
-      const isAlreadyFave = faves.find((fave) => parseInt(fave.id) === id);
+      const isAlreadyFave = faves.find((fave: Product) => fave.id.toString() === id.toString());
 
       let faveClass = "";
       if (isAlreadyFave) {

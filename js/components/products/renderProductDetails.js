@@ -22,7 +22,7 @@ export default function renderProductDetails(currentProduct) {
     const ogUrl = location.href;
     updateHead(ogTitle, ogDesc, ogImg, ogUrl);
     const faves = getFromStorage(favesKey);
-    const isAlreadyFave = faves.find((fave) => parseInt(fave.id) === id);
+    const isAlreadyFave = faves.find((fave) => fave.id.toString() === id.toString());
     let faveClass = "";
     if (isAlreadyFave) {
         faveClass = "isFavorite";

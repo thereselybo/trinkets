@@ -4,15 +4,15 @@ import { checkUrlProtocol } from "../../utils/validation.js";
 import displayMessage from "../common/displayMessage.js";
 
 export default async function updateProduct(
-  title,
-  price,
-  category,
-  intro,
-  description,
-  details,
-  image,
-  featured,
-  id
+  title: string,
+  price: string,
+  category: string,
+  intro: string,
+  description: string,
+  details: string,
+  image: string,
+  featured: boolean,
+  id: string
 ) {
   image = checkUrlProtocol(image);
 

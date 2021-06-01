@@ -1,12 +1,14 @@
 import {
   productImgPlaceholder,
   productImgAltPlaceholder,
+  baseUrl,
 } from "../../settings/variables.js";
 
 let productImg = productImgPlaceholder;
 let productImgAlt = productImgAltPlaceholder;
+import { Product } from "../../settings/interfaces";
 
-export default function findProductSpecs(product) {
+export default function findProductSpecs(product: Product) {
   const title = product.title;
   const price = product.price;
   const id = product.id;

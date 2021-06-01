@@ -2,8 +2,8 @@ import { baseUrl } from "../../settings/variables.js";
 import { getFromStorage, tokenKey } from "../../utils/storage.js";
 import displayMessage from "../common/displayMessage.js";
 
-export default function deleteBtn(id) {
-  const button = document.querySelector("#confirmDelete");
+export default function deleteBtn(id: string | null): void {
+  const button = document.querySelector("#confirmDelete") as HTMLButtonElement;
   const messageContainer = "#deleteModal .message-container";
 
   // if clicking the confirm button, delete product
