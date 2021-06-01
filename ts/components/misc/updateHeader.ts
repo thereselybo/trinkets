@@ -3,7 +3,12 @@ import { checkUrlProtocol } from "../../utils/validation.js";
 import { getFromStorage, tokenKey } from "../../utils/storage.js";
 import { baseUrl } from "../../settings/variables.js";
 
-export default async function updateHeader(caption, image, button, buttonText) {
+export default async function updateHeader(
+  caption: string,
+  image: string,
+  button: string,
+  buttonText: string
+) {
   image = checkUrlProtocol(image);
 
   const messageContainer = "#edit-header .message-container";

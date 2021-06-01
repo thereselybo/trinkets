@@ -1,5 +1,7 @@
-const switchCheckbox = document.querySelector("#featured");
-const featuredStatus = document.querySelector("#featuredStatus");
+const switchCheckbox = document.querySelector("#featured") as HTMLInputElement;
+const featuredStatus = document.querySelector(
+  "#featuredStatus"
+) as HTMLLabelElement;
 
 export default function toggleFeaturedSwitch() {
   switchCheckbox.onclick = () => {

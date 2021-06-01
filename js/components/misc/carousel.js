@@ -1,3 +1,4 @@
+// TODO: fix cannot find name 'Glide'
 export default function initCarousel() {
     const carousels = document.querySelectorAll(".glide");
     const config = {
