@@ -20,7 +20,8 @@ export default function addShippingInfo() {
       validateElement(zipCode, 4) &&
       validateElement(city, 3)
     ) {
-      $("#checkoutModal").modal("show");
+      const modal: any = $("#checkoutModal");
+      modal.modal("show");
     }
   };
 }

@@ -5,11 +5,12 @@ import { updateCartIcon } from "./addToCart.js";
 import updateQty from "./updateQty.js";
 import addShippingInfo from "./addShippingInfo.js";
 import deleteProductRow from "./deleteProductRow.js";
+import { Product } from "../../settings/interfaces.js";
 
 createMenu();
 
 export default function renderCart() {
-  const container = document.querySelector(".products-container");
+  const container = document.querySelector(".products-container") as HTMLDivElement;
   const messageContainer = "#items-in-cart .message-container";
 
   container.innerHTML = "";
@@ -17,7 +18,7 @@ export default function renderCart() {
   const cartItems = getFromStorage(cartKey);
 
   if (cartItems && cartItems.length) {
-    cartItems.forEach((product) => {
+    cartItems.forEach((product: Product) => {
       const title = product.title;
       const image = product.image;
       const price = product.price;

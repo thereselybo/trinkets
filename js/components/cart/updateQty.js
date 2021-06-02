@@ -7,15 +7,15 @@ export default function updateQty() {
     const addBtns = document.querySelectorAll(".add");
     subtractBtns.forEach((button) => {
         button.onclick = () => {
-            console.log("removing an item");
+            // console.log("removing an item");
             const parent = button.parentNode;
             const qty = parent.querySelector(".quantity");
             const id = button.dataset.id;
             const cart = getFromStorage(cartKey);
-            const itemInCart = cart.find((product) => product.id === id);
+            const itemInCart = cart.find((product) => product.id.toString() === (id === null || id === void 0 ? void 0 : id.toString()));
             itemInCart.qty--;
             if (itemInCart.qty < 1) {
-                const newCart = cart.filter((item) => item.id !== id);
+                const newCart = cart.filter((item) => item.id.toString() !== (id === null || id === void 0 ? void 0 : id.toString()));
                 saveToStorage(cartKey, newCart);
                 // render again without product row
                 renderCart();
@@ -35,7 +35,7 @@ export default function updateQty() {
             const qty = parent.querySelector(".quantity");
             const id = button.dataset.id;
             const cart = getFromStorage(cartKey);
-            const itemInCart = cart.find((product) => product.id === id);
+            const itemInCart = cart.find((product) => product.id.toString() === (id === null || id === void 0 ? void 0 : id.toString()));
             itemInCart.qty++;
             qty.innerText = itemInCart.qty;
             saveToStorage(cartKey, cart);

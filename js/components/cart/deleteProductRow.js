@@ -8,7 +8,7 @@ export default function deleteProductRow() {
         button.onclick = () => {
             const id = button.dataset.id;
             const cart = getFromStorage(cartKey);
-            const newCart = cart.filter((item) => item.id !== id);
+            const newCart = cart.filter((item) => item.id.toString() !== (id === null || id === void 0 ? void 0 : id.toString()));
             saveToStorage(cartKey, newCart);
             // render again without product row
             renderCart();

@@ -1,7 +1,10 @@
+import { Product } from "../../settings/interfaces.js";
 import { cartKey, getFromStorage, saveToStorage } from "../../utils/storage.js";
 
 export default function addToCart() {
-  const cartBtns = document.querySelectorAll(".addToCart");
+  const cartBtns = document.querySelectorAll(
+    ".addToCart"
+  ) as NodeListOf<HTMLAnchorElement>;
 
   cartBtns.forEach((button) => {
     button.onclick = () => {
@@ -13,7 +16,7 @@ export default function addToCart() {
 
       const cart = getFromStorage(cartKey);
       const product = { title, id, price, image, qty };
-      const itemInCart = cart.find((product) => product.id === id);
+      const itemInCart = cart.find((product: Product) => product.id === id);
 
       if (!itemInCart) {
         cart.push(product);
@@ -32,7 +35,7 @@ export function updateCartIcon() {
   const currentCart = getFromStorage(cartKey);
   let cartQty = 0;
 
-  currentCart.forEach((product) => {
+  currentCart.forEach((product: Product) => {
     const productQty = product.qty;
     console.log(product.qty);
     cartQty += productQty;
@@ -40,12 +43,16 @@ export function updateCartIcon() {
 
   console.log("items in cart:", cartQty);
 
-  const itemsInCart = document.querySelectorAll(".itemsInCart");
+  const itemsInCart = document.querySelectorAll(
+    ".itemsInCart"
+  ) as NodeListOf<HTMLSpanElement>;
 
   itemsInCart.forEach((cart) => {
+    console.log("cart", typeof cart);
+
     if (cartQty) {
       cart.style.display = "inline";
-      cart.innerText = cartQty;
+      cart.innerText = cartQty.toString();
     } else {
       cart.style.display = "none";
     }

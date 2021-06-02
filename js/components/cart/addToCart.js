@@ -34,9 +34,10 @@ export function updateCartIcon() {
     console.log("items in cart:", cartQty);
     const itemsInCart = document.querySelectorAll(".itemsInCart");
     itemsInCart.forEach((cart) => {
+        console.log("cart", typeof cart);
         if (cartQty) {
             cart.style.display = "inline";
-            cart.innerText = cartQty;
+            cart.innerText = cartQty.toString();
         }
         else {
             cart.style.display = "none";
