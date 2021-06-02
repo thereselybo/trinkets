@@ -1,13 +1,13 @@
 import validateElement, { validateEmail } from "../../utils/validation.js";
 
 export default function addShippingInfo() {
-  const form = document.querySelector("#form-shipping-info");
-  const firstName = document.querySelector("#first-name");
-  const lastName = document.querySelector("#last-name");
-  const email = document.querySelector("#email");
-  const address = document.querySelector("#address");
-  const zipCode = document.querySelector("#zip-code");
-  const city = document.querySelector("#city");
+  const form = document.querySelector("#form-shipping-info") as HTMLFormElement;
+  const firstName = document.querySelector("#first-name") as HTMLInputElement;
+  const lastName = document.querySelector("#last-name") as HTMLInputElement;
+  const email = document.querySelector("#email") as HTMLInputElement;
+  const address = document.querySelector("#address") as HTMLInputElement;
+  const zipCode = document.querySelector("#zip-code") as HTMLInputElement;
+  const city = document.querySelector("#city") as HTMLInputElement;
 
   form.onsubmit = (e) => {
     e.preventDefault();

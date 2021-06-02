@@ -1,9 +1,9 @@
 import login from "./login.js";
 import { checkIfAdmin, checkIfUser } from "../../utils/storage.js";
 import logout from "./logout.js";
-let container = "";
-let adminHtml = "";
-let userHtml = "";
+let container;
+let adminHtml;
+let userHtml;
 export default function accountModal() {
     const modal = `
     <div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="accountModalLabel" aria-hidden="true">

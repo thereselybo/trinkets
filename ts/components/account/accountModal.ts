@@ -2,9 +2,9 @@ import login from "./login.js";
 import { checkIfAdmin, checkIfUser } from "../../utils/storage.js";
 import logout from "./logout.js";
 
-let container = "";
-let adminHtml = "";
-let userHtml = "";
+let container: HTMLDivElement;
+let adminHtml: string;
+let userHtml: string;
 
 export default function accountModal() {
   const modal = `
@@ -46,13 +46,17 @@ export default function accountModal() {
         </div>
     </div>`;
 
-  container = document.querySelector(".modal-container");
+  container = document.querySelector(".modal-container") as HTMLDivElement;
   container.innerHTML = modal;
 
-  const registerLink = document.querySelector("#register-link");
-  const modalTitle = document.querySelector(".modal-title");
-  const modalBody = document.querySelector(".modal-body");
-  const modalFooter = document.querySelector(".modal-footer");
+  const registerLink = document.querySelector(
+    "#register-link"
+  ) as HTMLAnchorElement;
+  const modalTitle = document.querySelector(
+    ".modal-title"
+  ) as HTMLHeadingElement;
+  const modalBody = document.querySelector(".modal-body") as HTMLDivElement;
+  const modalFooter = document.querySelector(".modal-footer") as HTMLDivElement;
 
   if (registerLink) {
     registerLink.onclick = () => {

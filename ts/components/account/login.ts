@@ -2,9 +2,9 @@ import handleLogin from "./handleLogin.js";
 import validateElement from "../../utils/validation.js";
 
 export default function login() {
-  const loginForm = document.querySelector("#login-form");
-  const username = document.querySelector("#username");
-  const password = document.querySelector("#password");
+  const loginForm = document.querySelector("#login-form") as HTMLFormElement;
+  const username = document.querySelector("#username") as HTMLInputElement;
+  const password = document.querySelector("#password") as HTMLInputElement;
 
   loginForm.onsubmit = (e) => {
     e.preventDefault();

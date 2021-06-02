@@ -2,7 +2,7 @@ import displayMessage from "../common/displayMessage.js";
 import { baseUrl } from "../../settings/variables.js";
 import { saveToStorage, tokenKey, userKey } from "../../utils/storage.js";
 
-export default async function handleLogin(username, password) {
+export default async function handleLogin(username: string, password: string) {
   const messageContainer = "#accountModal .message-container";
   const authUrl = `${baseUrl}/auth/local`;
   const data = JSON.stringify({ identifier: username, password: password });

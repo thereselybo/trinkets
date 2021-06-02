@@ -2,7 +2,7 @@ import { removeFromStorage, tokenKey, userKey } from "../../utils/storage.js";
 import displayMessage from "../common/displayMessage.js";
 
 export default function logout() {
-  const logoutBtn = document.querySelector("#logout");
+  const logoutBtn = document.querySelector("#logout") as HTMLButtonElement;
   const messageContainer = "#accountModal .message-container";
 
   if (logoutBtn) {
