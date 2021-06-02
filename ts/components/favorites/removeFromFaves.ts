@@ -13,7 +13,7 @@ export default function removeFromFaves() {
 
   faveBtns.forEach((button) => {
     button.onclick = () => {
-      const heart = button.querySelector(".flaticon-heart") as HTMLLIElement;
+      const heart = button.querySelector(".flaticon-heart") as HTMLSpanElement;
       heart.classList.toggle("isFavorite");
 
       const id = button.dataset.id;

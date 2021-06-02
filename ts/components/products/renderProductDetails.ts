@@ -81,7 +81,7 @@ export default function renderProductDetails(currentProduct: Product) {
                 data-slide="prev"
                 >
                 <span class="carousel-arrow carousel-arrow-left">
-                    <i class="flaticon flaticon-left-arrow"></i>
+                    <span class="flaticon flaticon-left-arrow"></span>
                 </span>
                 <span class="sr-only">Previous</span>
                 </a>
@@ -92,7 +92,7 @@ export default function renderProductDetails(currentProduct: Product) {
                 data-slide="next"
                 >
                 <span class="carousel-arrow carousel-arrow-right">
-                    <i class="flaticon flaticon-chevron"></i>
+                    <span class="flaticon flaticon-chevron"></span>
                 </span>
                 <span class="sr-only">Next</span>
                 </a>
@@ -104,7 +104,7 @@ export default function renderProductDetails(currentProduct: Product) {
                     <h1 class="h4 text-left text-md-center">${title}</h1>
                     <h2 class="h1 text-left text-md-center">${price}kr</h2>
                     <button class="position-absolute favorite-btn" data-id="${id}" data-title="${title}" data-img="${image} data=price="${price}">
-                    <i class="flaticon flaticon-heart ${faveClass}"></i>
+                    <span class="flaticon flaticon-heart ${faveClass}"></span>
                     </button>
                     <p class="card-text text-center">
                     ${intro}
@@ -115,7 +115,7 @@ export default function renderProductDetails(currentProduct: Product) {
                     data-id="${id}" data-title="${title}" data-price="${price}" data-img="${image}" 
                     >
                     Add to cart
-                    <i class="flaticon flaticon-shopping-cart-2"></i>
+                    <span class="flaticon flaticon-shopping-cart-2"></span>
                     </a>
                 </div>
                 </div>
@@ -257,7 +257,7 @@ export default function renderProductDetails(currentProduct: Product) {
                         data-slide="prev"
                         >
                         <span class="carousel-arrow carousel-arrow-left">
-                            <i class="flaticon flaticon-left-arrow"></i>
+                            <span class="flaticon flaticon-left-arrow"></span>
                         </span>
                         <span class="sr-only">Previous</span>
                         </a>
@@ -268,7 +268,7 @@ export default function renderProductDetails(currentProduct: Product) {
                         data-slide="next"
                         >
                         <span class="carousel-arrow carousel-arrow-right">
-                            <i class="flaticon flaticon-chevron"></i>
+                            <span class="flaticon flaticon-chevron"></span>
                         </span>
                         <span class="sr-only">Next</span>
                         </a>
@@ -279,7 +279,7 @@ export default function renderProductDetails(currentProduct: Product) {
                         <h1 class="h4 text-center">${title}</h1>
                         <h2 class="h1 text-center">${price}kr</h2>
                         <button class="position-absolute favorite-btn" data-id="${id}" data-title="${title}" data-img="${image}" data-price="${price}">
-                        <i class="flaticon flaticon-heart ${faveClass}"></i>
+                        <span class="flaticon flaticon-heart ${faveClass}"></span>
                         </button>
                         <p class="card-text text-center">
                         ${description}
@@ -290,7 +290,7 @@ export default function renderProductDetails(currentProduct: Product) {
                         data-id="${id}" data-title="${title}" data-price="${price}" data-img="${image}" 
                         >
                         Add to cart
-                        <i class="flaticon flaticon-shopping-cart-2"></i>
+                        <span class="flaticon flaticon-shopping-cart-2"></span>
                         </a>
                     </div>
                     </div>

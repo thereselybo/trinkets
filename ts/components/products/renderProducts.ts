@@ -12,7 +12,9 @@ const params = new URLSearchParams(queryString);
 const category = params.get("category");
 
 export default function renderProducts(products: Product[]) {
-  const container = document.querySelector(".products-container") as HTMLDivElement;
+  const container = document.querySelector(
+    ".products-container"
+  ) as HTMLDivElement;
   const messageContainer = document.querySelector(
     "#products .message-container"
   ) as HTMLDivElement;
@@ -41,7 +43,9 @@ export default function renderProducts(products: Product[]) {
       const id = product.id;
       const image = product.productImg;
       const faves = getFromStorage(favesKey);
-      const isAlreadyFave = faves.find((fave: Product) => fave.id.toString() === id.toString());
+      const isAlreadyFave = faves.find(
+        (fave: Product) => fave.id.toString() === id.toString()
+      );
 
       let faveClass = "";
       if (isAlreadyFave) {
@@ -55,13 +59,13 @@ export default function renderProducts(products: Product[]) {
           data-id="${id}" data-title="${title}" data-price="${price}" data-img="${image}" 
         >
           Add to cart
-          <i class="flaticon flaticon-shopping-cart-2"></i>
+          <span class="flaticon flaticon-shopping-cart-2"></span>
         </a>
         <a
           href="javascript:void(0);"
           class="mobile-button btn d-block d-md-none position-absolute addToCart"
           data-id="${id}" data-title="${title}" data-price="${price}" data-img="${image}" 
-        ><i class="flaticon flaticon-shopping-cart-2"></i
+        ><span class="flaticon flaticon-shopping-cart-2"></span
         ></a>`;
 
       if (admin) {
@@ -70,12 +74,11 @@ export default function renderProducts(products: Product[]) {
             class="btn btn-primary btn-block mt-auto py-2 d-none d-md-block"
           >
             Edit
-            <i class="flaticon flaticon-edit"></i>
+            <span class="flaticon flaticon-edit"></span>
           </a>
           <a href="./edit.html?id=${id}"
             class="mobile-button btn d-block d-md-none position-absolute"
-          ><i class="flaticon flaticon-edit"></i></i
-          ></a>`;
+          ><span class="flaticon flaticon-edit"></span></a>`;
       }
 
       container.innerHTML += `
@@ -90,7 +93,7 @@ export default function renderProducts(products: Product[]) {
                 </div>
               </a>
               <button class="position-absolute favorite-btn" data-id="${id}" data-title="${title}" data-img="${image}" data-price="${price}">
-                <i class="flaticon flaticon-heart ${faveClass}"></i>
+                <span class="flaticon flaticon-heart ${faveClass}"></span>
               </button>
             </div>
             <div

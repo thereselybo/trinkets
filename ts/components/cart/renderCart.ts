@@ -42,16 +42,16 @@ export default function renderCart() {
         </div>
         <div class="col-4 col-md-2 pl-0 cart-qty text-nowrap text-right text-md-left border-top py-3">
           <button class="items-button subtract" data-id="${id}">
-            <i class="flaticon flaticon-left-arrow"></i>
+            <span class="flaticon flaticon-left-arrow"></span>
           </button>
           <span class="mx-2 quantity">${qty}</span>
           <button class="items-button add" data-id="${id}">
-            <i class="flaticon flaticon-chevron"></i>
+            <span class="flaticon flaticon-chevron"></span>
           </button>
         </div>
         <div class="col-2 d-none d-md-flex border-top pt-3">${price} kr</div>
         <div class="col-1 d-none d-md-flex py-3">
-          <i class="flaticon flaticon-shopping-cart-1" data-id="${id}"></i>
+          <span class="flaticon flaticon-shopping-cart-1" data-id="${id}"></span>
         </div>`;
 
       container.innerHTML += card;

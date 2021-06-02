@@ -41,13 +41,13 @@ export default function renderProducts(products) {
           data-id="${id}" data-title="${title}" data-price="${price}" data-img="${image}" 
         >
           Add to cart
-          <i class="flaticon flaticon-shopping-cart-2"></i>
+          <span class="flaticon flaticon-shopping-cart-2"></span>
         </a>
         <a
           href="javascript:void(0);"
           class="mobile-button btn d-block d-md-none position-absolute addToCart"
           data-id="${id}" data-title="${title}" data-price="${price}" data-img="${image}" 
-        ><i class="flaticon flaticon-shopping-cart-2"></i
+        ><span class="flaticon flaticon-shopping-cart-2"></span
         ></a>`;
             if (admin) {
                 button = `
@@ -55,12 +55,11 @@ export default function renderProducts(products) {
             class="btn btn-primary btn-block mt-auto py-2 d-none d-md-block"
           >
             Edit
-            <i class="flaticon flaticon-edit"></i>
+            <span class="flaticon flaticon-edit"></span>
           </a>
           <a href="./edit.html?id=${id}"
             class="mobile-button btn d-block d-md-none position-absolute"
-          ><i class="flaticon flaticon-edit"></i></i
-          ></a>`;
+          ><span class="flaticon flaticon-edit"></span></a>`;
             }
             container.innerHTML += `
         <div class="col-6 col-md-4 flex-fill mb-4">
@@ -74,7 +73,7 @@ export default function renderProducts(products) {
                 </div>
               </a>
               <button class="position-absolute favorite-btn" data-id="${id}" data-title="${title}" data-img="${image}" data-price="${price}">
-                <i class="flaticon flaticon-heart ${faveClass}"></i>
+                <span class="flaticon flaticon-heart ${faveClass}"></span>
               </button>
             </div>
             <div

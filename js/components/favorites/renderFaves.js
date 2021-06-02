@@ -37,7 +37,7 @@ export default function renderFaves() {
                         </div>
                     </a>
                     <button class="position-absolute favorite-btn" data-id="${id}">
-                        <i class="flaticon flaticon-heart isFavorite"></i>
+                        <span class="flaticon flaticon-heart isFavorite"></span>
                     </button>
                 </div>
             <div
@@ -51,13 +51,13 @@ export default function renderFaves() {
                 data-id="${id}" data-title="${title}" data-price="${price}" data-img="${image}" 
                 >
                 Add to cart
-                <i class="flaticon flaticon-shopping-cart-2"></i>
+                <span class="flaticon flaticon-shopping-cart-2"></span>
                 </a>
                 <a
                 href="javascript:void(0);"
                 class="mobile-button btn d-block d-md-none position-absolute addToCart"
                 data-id="${id}" data-title="${title}" data-price="${price}" data-img="${image}" 
-                ><i class="flaticon flaticon-shopping-cart-2"></i
+                ><span class="flaticon flaticon-shopping-cart-2"></span
                 ></a>
             </div>
             </div>

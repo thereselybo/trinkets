@@ -74,7 +74,7 @@ function renderFeatures(products: Product[]) {
           button = `
               <a href="./edit.html?id=${id}"
                 class="btn btn-primary btn-lg btn-block py-3 mt-auto"
-                >Edit<i class="flaticon flaticon-edit pl-2"></i></a
+                >Edit<span class="flaticon flaticon-edit pl-2"></span></a
               >`;
         }
 
@@ -90,7 +90,7 @@ function renderFeatures(products: Product[]) {
                       </div>
                   </a>
                   <button class="position-absolute favorite-btn" data-id="${id}" data-title="${title}" data-img="${image}" data-price="${price}">
-                    <i class="flaticon flaticon-heart ${faveClass}"></i>
+                    <span class="flaticon flaticon-heart ${faveClass}"></span>
                   </button>
                 </div>
                 <div class="card-body d-flex flex-column text-center">
@@ -115,13 +115,13 @@ function renderFeatures(products: Product[]) {
                     class="glide__arrow glide__arrow--left"
                     data-glide-dir="<"
                     >
-                    <i class="flaticon flaticon-left-arrow"></i>
+                    <span class="flaticon flaticon-left-arrow"></span>
                     </button>
                     <button
                     class="glide__arrow glide__arrow--right"
                     data-glide-dir=">"
                     >
-                    <i class="flaticon flaticon-chevron"></i>
+                    <span class="flaticon flaticon-chevron"></span>
                     </button>
                 </div>
             </div>`;
@@ -158,7 +158,7 @@ function renderFeatures(products: Product[]) {
         button = `
             <a href="./edit.html?id=${id}"
               class="btn btn-primary btn-lg btn-block py-3 mt-auto"
-            >Edit<i class="flaticon flaticon-edit pl-2"></i></a>`;
+            >Edit<span class="flaticon flaticon-edit pl-2"></span></a>`;
       }
 
       const card = `
@@ -173,7 +173,7 @@ function renderFeatures(products: Product[]) {
                     </div>
                   </a>
                   <button class="position-absolute favorite-btn" data-id="${id}" data-title="${title}" data-img="${image}" data-price="${price}">
-                    <i class="flaticon flaticon-heart ${faveClass}"></i>
+                    <span class="flaticon flaticon-heart ${faveClass}"></span>
                   </button>
                 </div>
                 <div class="card-body d-flex flex-column text-center">

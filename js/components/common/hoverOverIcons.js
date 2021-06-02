@@ -3,12 +3,13 @@ export default function hoverOverIcons() {
     navIcons.forEach((icon) => {
         const listItem = icon.parentNode;
         const hoverText = listItem.querySelector(".hover-text");
-        icon.parentNode.onmouseover = () => {
+        console.log(typeof hoverText);
+        listItem.onmouseover = () => {
             if (!hoverText.classList.contains("active")) {
                 hoverText.classList.add("active");
             }
         };
-        icon.parentNode.onmouseout = () => {
+        listItem.onmouseout = () => {
             if (hoverText.classList.contains("active")) {
                 hoverText.classList.remove("active");
             }

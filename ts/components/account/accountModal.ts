@@ -102,13 +102,13 @@ export default function accountModal() {
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a href="./add.html" class="nav-link">
-                                <i class="flaticon flaticon-plus"></i>
+                                <span class="flaticon flaticon-plus"></span>
                                 Add new product
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="./edit-header.html" class="nav-link">
-                                <i class="flaticon flaticon-edit"></i>
+                                <span class="flaticon flaticon-edit"></span>
                                 Edit header
                             </a>
                         </li>
@@ -137,7 +137,7 @@ export default function accountModal() {
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a href="./favorites.html" class="nav-link">
-                                <i class="flaticon flaticon-heart"></i>
+                                <span class="flaticon flaticon-heart"></span>
                                 Favorites
                             </a>
                         </li>

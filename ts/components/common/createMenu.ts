@@ -4,7 +4,7 @@ import searchProducts from "../search/searchProducts.js";
 import hoverOverIcons from "./hoverOverIcons.js";
 
 export default function createMenu() {
-  const container = document.querySelector(".nav-container");
+  const container = document.querySelector(".nav-container") as HTMLDivElement;
   const pathname = location.pathname;
 
   const mobileCategoryNav = `
@@ -56,7 +56,7 @@ export default function createMenu() {
                 </button>
                 <div class="cart-mobile d-lg-none">
                     <a href="./cart.html" class="shopping-cart position-relative" id="cartIcon">
-                        <i class="flaticon flaticon-shopping-cart"></i>    
+                        <span class="flaticon flaticon-shopping-cart"></span>    
                         <span class="itemsInCart"></span>
                     </a>
                 </div>
@@ -106,7 +106,7 @@ export default function createMenu() {
                                 class="btn my-0 product-search-button"
                                 type="submit"
                             >
-                                <i class="flaticon flaticon-magnifying-glass-2"></i>
+                                <span class="flaticon flaticon-magnifying-glass-2"></span>
                             </button>
                             </div>
                         </div>
@@ -119,25 +119,25 @@ export default function createMenu() {
                     <ul class="navbar-nav">
                     <li class="nav-item px-3 flex-column text-center position-relative">
                         <a href="javascript:void(0);" id="search-button">
-                            <i class="flaticon flaticon-magnifying-glass-2 nav-icon"></i>
+                            <span class="flaticon flaticon-magnifying-glass-2 nav-icon"></span>
                             <p class="hover-text position-absolute">Search</p>
                         </a>
                     </li>
                     <li class="nav-item px-3 flex-column text-center position-relative">
                         <a href="javascript:void(0);" id="account-button" data-toggle="modal" data-target="#accountModal">
-                            <i class="flaticon flaticon-user nav-icon"></i>
+                            <span class="flaticon flaticon-user nav-icon"></span>
                             <p class="hover-text position-absolute">Account</p>
                         </a>
                     </li>
                     <li class="nav-item px-3 flex-column text-center position-relative">
                         <a href="./favorites.html">
-                            <i class="flaticon flaticon-heart nav-icon"></i>
+                            <span class="flaticon flaticon-heart nav-icon"></span>
                             <p class="hover-text position-absolute">Favorites</p>
                         </a>
                     </li>
                     <li class="nav-item px-3 flex-column text-center position-relative">
                     <a href="./cart.html" class="shopping-cart position-relative" id="cartIcon">
-                        <i class="flaticon flaticon-shopping-cart nav-icon"></i>
+                        <span class="flaticon flaticon-shopping-cart nav-icon"></span>
                         <span class="itemsInCart"></span>
                         <p class="hover-text position-absolute">Cart</p>
                         </a>
@@ -161,7 +161,7 @@ export default function createMenu() {
                                 class="btn my-0 product-search-button"
                                 type="submit"
                             >
-                                <i class="flaticon flaticon-magnifying-glass-2"></i>
+                                <span class="flaticon flaticon-magnifying-glass-2"></span>
                             </button>
                             </div>
                         </div>
@@ -185,8 +185,12 @@ export default function createMenu() {
 createMenu();
 
 function toggleSearchField() {
-  const searchBtn = document.querySelector("#search-button");
-  const searchField = document.querySelector("#nav-search-desktop");
+  const searchBtn = document.querySelector(
+    "#search-button"
+  ) as HTMLButtonElement;
+  const searchField = document.querySelector(
+    "#nav-search-desktop"
+  ) as HTMLInputElement;
 
   searchBtn.onclick = () => {
     searchField.classList.toggle("active");

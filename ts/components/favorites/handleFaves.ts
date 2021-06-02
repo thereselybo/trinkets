@@ -12,7 +12,7 @@ export default function handleFaves() {
 
   faveBtns.forEach((button) => {
     button.onclick = () => {
-      const heart = button.querySelector(".flaticon-heart") as HTMLLIElement;
+      const heart = button.querySelector(".flaticon-heart") as HTMLSpanElement;
       heart.classList.toggle("isFavorite");
 
       const title = button.dataset.title;
