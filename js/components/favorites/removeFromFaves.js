@@ -8,7 +8,7 @@ export default function removeFromFaves() {
             heart.classList.toggle("isFavorite");
             const id = button.dataset.id;
             const currentFaves = getFromStorage(favesKey);
-            const newFaves = currentFaves.filter((fave) => parseInt(fave.id) !== parseInt(id));
+            const newFaves = currentFaves.filter((fave) => fave.id.toString() !== (id === null || id === void 0 ? void 0 : id.toString()));
             saveToStorage(favesKey, newFaves);
             renderFaves();
         };

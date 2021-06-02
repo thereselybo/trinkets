@@ -1,3 +1,4 @@
+import { Product } from "../../settings/interfaces.js";
 import {
   favesKey,
   getFromStorage,
@@ -5,11 +6,13 @@ import {
 } from "../../utils/storage.js";
 
 export default function handleFaves() {
-  const faveBtns = document.querySelectorAll(".favorite-btn");
+  const faveBtns = document.querySelectorAll(
+    ".favorite-btn"
+  ) as NodeListOf<HTMLElement>;
 
   faveBtns.forEach((button) => {
     button.onclick = () => {
-      const heart = button.querySelector(".flaticon-heart");
+      const heart = button.querySelector(".flaticon-heart") as HTMLLIElement;
       heart.classList.toggle("isFavorite");
 
       const title = button.dataset.title;
@@ -19,14 +22,18 @@ export default function handleFaves() {
 
       const currentFaves = getFromStorage(favesKey);
 
-      const alreadyFave = currentFaves.find((fave) => fave.id === id);
+      const alreadyFave = currentFaves.find(
+        (fave: Product) => fave.id.toString() === id?.toString()
+      );
 
       if (!alreadyFave) {
         const product = { title, id, price, image };
         currentFaves.push(product);
         saveToStorage(favesKey, currentFaves);
       } else {
-        const newFaves = currentFaves.filter((fave) => fave.id !== id);
+        const newFaves = currentFaves.filter(
+          (fave: Product) => fave.id.toString() !== id?.toString()
+        );
         saveToStorage(favesKey, newFaves);
       }
     };

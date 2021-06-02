@@ -6,6 +6,7 @@ import handleFaves from "./handleFaves.js";
 import updateHead from "../common/updateHead.js";
 import addToCart from "../cart/addToCart.js";
 import { hostedUrl } from "../../settings/variables.js";
+import { Product } from "../../settings/interfaces.js";
 
 createMenu();
 
@@ -18,14 +19,16 @@ createMenu();
 })();
 
 export default function renderFaves() {
-  const container = document.querySelector(".products-container");
+  const container = document.querySelector(
+    ".products-container"
+  ) as HTMLDivElement;
   const messageContainer = "#products .message-container";
   const faves = getFromStorage(favesKey);
 
   container.innerHTML = "";
 
   if (faves && faves.length) {
-    faves.forEach((fave) => {
+    faves.forEach((fave: Product) => {
       const title = fave.title;
       const image = fave.image;
       const price = fave.price;
