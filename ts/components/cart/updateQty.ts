@@ -14,7 +14,6 @@ export default function updateQty() {
 
   subtractBtns.forEach((button) => {
     button.onclick = () => {
-      // console.log("removing an item");
       const parent = button.parentNode as HTMLDivElement;
       const qty = parent.querySelector(".quantity") as HTMLSpanElement;
       const id = button.dataset.id;
@@ -45,7 +44,6 @@ export default function updateQty() {
 
   addBtns.forEach((button) => {
     button.onclick = () => {
-      console.log("adding another item");
       const parent = button.parentNode as HTMLDivElement;
       const qty = parent.querySelector(".quantity") as HTMLSpanElement;
       const id = button.dataset.id;

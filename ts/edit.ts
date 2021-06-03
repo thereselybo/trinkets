@@ -72,8 +72,6 @@ let featuredStatus: boolean = false;
 })();
 
 function renderEditForm(products: Product[]) {
-  console.log(products);
-
   let productExists: Product[] = [];
 
   if (id) {

@@ -66,7 +66,6 @@ let featuredStatus = false;
     });
 })();
 function renderEditForm(products) {
-    console.log(products);
     let productExists = [];
     if (id) {
         //checks if product exists in database

@@ -31,24 +31,19 @@ export default function addToCart() {
 }
 
 export function updateCartIcon() {
-  console.log("updateCartIcon");
   const currentCart = getFromStorage(cartKey);
   let cartQty = 0;
 
   currentCart.forEach((product: Product) => {
     const productQty = product.qty;
-    console.log(product.qty);
     cartQty += productQty;
   });
-
-  console.log("items in cart:", cartQty);
 
   const itemsInCart = document.querySelectorAll(
     ".itemsInCart"
   ) as NodeListOf<HTMLSpanElement>;
 
   itemsInCart.forEach((cart) => {
-    console.log("cart", typeof cart);
 
     if (cartQty) {
       cart.style.display = "inline";

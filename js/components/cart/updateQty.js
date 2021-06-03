@@ -7,7 +7,6 @@ export default function updateQty() {
     const addBtns = document.querySelectorAll(".add");
     subtractBtns.forEach((button) => {
         button.onclick = () => {
-            // console.log("removing an item");
             const parent = button.parentNode;
             const qty = parent.querySelector(".quantity");
             const id = button.dataset.id;
@@ -30,7 +29,6 @@ export default function updateQty() {
     });
     addBtns.forEach((button) => {
         button.onclick = () => {
-            console.log("adding another item");
             const parent = button.parentNode;
             const qty = parent.querySelector(".quantity");
             const id = button.dataset.id;

@@ -9,7 +9,6 @@ export default function hoverOverIcons() {
     const hoverText = listItem.querySelector(
       ".hover-text"
     ) as HTMLParagraphElement;
-    console.log(typeof hoverText);
 
     listItem.onmouseover = () => {
       if (!hoverText.classList.contains("active")) {
