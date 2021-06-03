@@ -17,4 +17,5 @@ export interface Product {
   image_url: string;
   image: ProductImage;
   featured: boolean;
+  qty: number;
 }

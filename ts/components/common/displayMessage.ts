@@ -1,5 +1,5 @@
 export default function displayMessage(
-  messageContainer: string,
+  messageContainer: string | HTMLDivElement,
   messageType: string,
   message: string
 ) {

@@ -65,25 +65,6 @@ let featuredStatus = false;
         }
     });
 })();
-// interface ProductImage {
-//   formats: {
-//     medium: {
-//       url: string;
-//     };
-//   };
-// }
-// interface Product {
-//   title: string;
-//   price: string;
-//   category: string;
-//   introduction: string;
-//   description: string;
-//   details: string;
-//   id: string;
-//   image_url: string;
-//   image: ProductImage;
-//   featured: boolean;
-// }
 function renderEditForm(products) {
     console.log(products);
     let productExists = [];
@@ -137,7 +118,7 @@ function renderEditForm(products) {
 form.onsubmit = (e) => {
     e.preventDefault();
     const titleValue = title.value.trim();
-    const priceValue = parseFloat(price.value);
+    const priceValue = price.value;
     const categoryValue = category.value.trim();
     const introValue = intro.value.trim();
     const descriptionValue = description.value.trim();

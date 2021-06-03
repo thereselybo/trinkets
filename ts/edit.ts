@@ -30,7 +30,7 @@ if (!admin) {
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
-const id: string | null = params.get("id");
+const id: any = params.get("id");
 
 if (!id) {
   document.location.href = "./404.html";
@@ -70,27 +70,6 @@ let featuredStatus: boolean = false;
     form.style.display = "block";
   }
 })();
-
-// interface ProductImage {
-//   formats: {
-//     medium: {
-//       url: string;
-//     };
-//   };
-// }
-
-// interface Product {
-//   title: string;
-//   price: string;
-//   category: string;
-//   introduction: string;
-//   description: string;
-//   details: string;
-//   id: string;
-//   image_url: string;
-//   image: ProductImage;
-//   featured: boolean;
-// }
 
 function renderEditForm(products: Product[]) {
   console.log(products);
@@ -157,7 +136,7 @@ form.onsubmit = (e) => {
   e.preventDefault();
 
   const titleValue = title.value.trim();
-  const priceValue = parseFloat(price.value);
+  const priceValue = price.value;
   const categoryValue = category.value.trim();
   const introValue = intro.value.trim();
   const descriptionValue = description.value.trim();

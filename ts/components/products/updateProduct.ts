@@ -12,7 +12,7 @@ export default async function updateProduct(
   details: string,
   image: string,
   featured: boolean,
-  id: string
+  id?: string
 ) {
   image = checkUrlProtocol(image);
 

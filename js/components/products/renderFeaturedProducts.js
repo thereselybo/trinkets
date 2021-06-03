@@ -128,7 +128,7 @@ function renderFeatures(products) {
             const id = product.id;
             const image = product.productImg;
             const faves = getFromStorage(favesKey);
-            const isAlreadyFave = faves.find((fave) => parseInt(fave.id) === id);
+            const isAlreadyFave = faves.find((fave) => fave.id.toString() === (id === null || id === void 0 ? void 0 : id.toString()));
             let faveClass = "";
             if (isAlreadyFave) {
                 faveClass = "isFavorite";
