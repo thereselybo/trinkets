@@ -29,7 +29,7 @@ renderFeaturedProducts();
     const header = await response.json();
 
     caption.innerHTML = header.hero_caption;
-    button.href = `./${header.hero_button}.html`;
+    button.href = `./${header.hero_button}`;
     button.innerHTML = header.hero_button_text;
     image.style.backgroundImage = `url("${header.hero_banner}")`;
   } catch (error) {
