@@ -4,38 +4,30 @@ import handleFaves from "../favorites/handleFaves.js";
 import addToCart from "../cart/addToCart.js";
 import { favesKey, getFromStorage } from "../../utils/storage.js";
 import updateHead from "../common/updateHead.js";
-
 const container = document.querySelector(".product-container");
-
 let mobileDisplay = "";
 let desktopDisplay = "";
-
 export default function renderProductDetails(currentProduct) {
-  const product = findProductSpecs(currentProduct);
-
-  const title = product.title;
-  const price = product.price;
-  const id = product.id;
-  const intro = product.intro;
-  const description = product.description;
-  const details = product.details;
-  const image = product.productImg;
-
-  const ogTitle = `${title} - `;
-  const ogDesc = intro;
-  const ogImg = image;
-  const ogUrl = location.href;
-  updateHead(ogTitle, ogDesc, ogImg, ogUrl);
-
-  const faves = getFromStorage(favesKey);
-  const isAlreadyFave = faves.find((fave) => parseInt(fave.id) === id);
-
-  let faveClass = "";
-  if (isAlreadyFave) {
-    faveClass = "isFavorite";
-  }
-
-  mobileDisplay = `
+    const product = findProductSpecs(currentProduct);
+    const title = product.title;
+    const price = product.price;
+    const id = product.id;
+    const intro = product.intro;
+    const description = product.description;
+    const details = product.details;
+    const image = product.productImg;
+    const ogTitle = `${title} - `;
+    const ogDesc = intro;
+    const ogImg = image;
+    const ogUrl = location.href;
+    updateHead(ogTitle, ogDesc, ogImg, ogUrl);
+    const faves = getFromStorage(favesKey);
+    const isAlreadyFave = faves.find((fave) => fave.id.toString() === id.toString());
+    let faveClass = "";
+    if (isAlreadyFave) {
+        faveClass = "isFavorite";
+    }
+    mobileDisplay = `
     <div class="mobile-display">
         <section class="pdp-main">
             <div id="productImageCarouselMobile" class="carousel slide" data-ride="false">
@@ -76,7 +68,7 @@ export default function renderProductDetails(currentProduct) {
                 data-slide="prev"
                 >
                 <span class="carousel-arrow carousel-arrow-left">
-                    <i class="flaticon flaticon-left-arrow"></i>
+                    <span class="flaticon flaticon-left-arrow"></span>
                 </span>
                 <span class="sr-only">Previous</span>
                 </a>
@@ -87,7 +79,7 @@ export default function renderProductDetails(currentProduct) {
                 data-slide="next"
                 >
                 <span class="carousel-arrow carousel-arrow-right">
-                    <i class="flaticon flaticon-chevron"></i>
+                    <span class="flaticon flaticon-chevron"></span>
                 </span>
                 <span class="sr-only">Next</span>
                 </a>
@@ -99,7 +91,7 @@ export default function renderProductDetails(currentProduct) {
                     <h1 class="h4 text-left text-md-center">${title}</h1>
                     <h2 class="h1 text-left text-md-center">${price}kr</h2>
                     <button class="position-absolute favorite-btn" data-id="${id}" data-title="${title}" data-img="${image} data=price="${price}">
-                    <i class="flaticon flaticon-heart ${faveClass}"></i>
+                    <span class="flaticon flaticon-heart ${faveClass}"></span>
                     </button>
                     <p class="card-text text-center">
                     ${intro}
@@ -110,7 +102,7 @@ export default function renderProductDetails(currentProduct) {
                     data-id="${id}" data-title="${title}" data-price="${price}" data-img="${image}" 
                     >
                     Add to cart
-                    <i class="flaticon flaticon-shopping-cart-2"></i>
+                    <span class="flaticon flaticon-shopping-cart-2"></span>
                     </a>
                 </div>
                 </div>
@@ -203,8 +195,7 @@ export default function renderProductDetails(currentProduct) {
             </div>
         </section>
     </div>`;
-
-  desktopDisplay = `
+    desktopDisplay = `
     <div class="desktop-display">
         <section class="pdp-main pt-5 pb-5">
             <div class="container">
@@ -252,7 +243,7 @@ export default function renderProductDetails(currentProduct) {
                         data-slide="prev"
                         >
                         <span class="carousel-arrow carousel-arrow-left">
-                            <i class="flaticon flaticon-left-arrow"></i>
+                            <span class="flaticon flaticon-left-arrow"></span>
                         </span>
                         <span class="sr-only">Previous</span>
                         </a>
@@ -263,7 +254,7 @@ export default function renderProductDetails(currentProduct) {
                         data-slide="next"
                         >
                         <span class="carousel-arrow carousel-arrow-right">
-                            <i class="flaticon flaticon-chevron"></i>
+                            <span class="flaticon flaticon-chevron"></span>
                         </span>
                         <span class="sr-only">Next</span>
                         </a>
@@ -274,7 +265,7 @@ export default function renderProductDetails(currentProduct) {
                         <h1 class="h4 text-center">${title}</h1>
                         <h2 class="h1 text-center">${price}kr</h2>
                         <button class="position-absolute favorite-btn" data-id="${id}" data-title="${title}" data-img="${image}" data-price="${price}">
-                        <i class="flaticon flaticon-heart ${faveClass}"></i>
+                        <span class="flaticon flaticon-heart ${faveClass}"></span>
                         </button>
                         <p class="card-text text-center">
                         ${description}
@@ -285,7 +276,7 @@ export default function renderProductDetails(currentProduct) {
                         data-id="${id}" data-title="${title}" data-price="${price}" data-img="${image}" 
                         >
                         Add to cart
-                        <i class="flaticon flaticon-shopping-cart-2"></i>
+                        <span class="flaticon flaticon-shopping-cart-2"></span>
                         </a>
                     </div>
                     </div>
@@ -392,18 +383,16 @@ export default function renderProductDetails(currentProduct) {
             </div>
         </section>
     </div>`;
-
-  updateHtml();
-  handleFaves();
-  addToCart();
+    updateHtml();
+    handleFaves();
+    addToCart();
 }
-
 function updateHtml() {
-  if (breakpoint.matches) {
-    container.innerHTML = mobileDisplay;
-  } else {
-    container.innerHTML = desktopDisplay;
-  }
+    if (breakpoint.matches) {
+        container.innerHTML = mobileDisplay;
+    }
+    else {
+        container.innerHTML = desktopDisplay;
+    }
 }
-
 breakpoint.addListener(updateHtml);

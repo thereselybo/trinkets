@@ -1,7 +1,7 @@
 ## To do
 
-- [ ] Update url in header button to point to christmas page
-- [ ] Display all products on products.html
+- [x] Update url in header button to point to christmas page
+- [x] Display all products on products.html
 - [ ] Customer registration
 - [ ] Shop navigation on mobile
 
