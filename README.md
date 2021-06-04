@@ -1,3 +1,9 @@
+<img src="./.readme/noroff-light.png" width="160" align="right">
+
+# Semester Project 2
+
+This assignment has been updated in connection with Portfolio Exam.
+
 ## To do
 
 - [x] Update url in header button to point to christmas page
@@ -6,8 +12,6 @@
 - [ ] Shop navigation on mobile
 
 ---
-
-<img src="./.readme/noroff-light.png" width="160" align="right">
 
 # Delivery
 
@@ -26,7 +30,7 @@
 
 ---
 
-# Semester project 2
+# Goal
 
 To create an e-commerce website that has an Admin and Front-End respectively. The Front-End should be responsive and the website is to be populated by an API supplied by Noroff.
 
